@@ -1,6 +1,7 @@
 <h1 class="article-title">Showing article detail</h1>
 
 <div class="article-detail">
+    by <strong><%= @article.user.username if @article.user %></strong>
     <p><strong>Title: </strong><%= @article.title %></p>
     <p><strong>Description: </strong><%= @article.description %></p>
 </div>
