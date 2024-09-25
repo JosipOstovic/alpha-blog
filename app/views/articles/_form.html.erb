@@ -1,13 +1,4 @@
-<% if @article.errors.any? %>
-    <div class="error-messages">
-        <h2>The following errors prevented the article from being saved:</h2>
-        <ul>
-            <% @article.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
-    </div>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <%= form_with(model: @article, local: true, class: 'article-form') do |f| %>
     <div class="form-group">
