@@ -1,5 +1,10 @@
 <h1>This is the Home page</h1>
 
-<%= link_to 'Articles listing', articles_path, class:"btn submit-btn" %> |
+<%= link_to 'Articles listing', articles_path, class:"btn submit-btn" %>
 <%= link_to 'About page', about_path, class:"btn submit-btn" %>
-<%= link_to "Sign up!", signup_path, class:"btn submit-btn" %>
+<%= link_to "Sign up", signup_path, class:"btn submit-btn" %>
+<% if logged_in? %>
+    <%= link_to 'Logout', logout_path, class: "btn submit-btn", data: { turbo_method: :delete} %>
+<% else %>
+    <%= link_to 'Log in', login_path, class:"btn submit-btn" %>
+<% end %>

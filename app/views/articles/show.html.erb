@@ -1,5 +1,12 @@
 <h1 class="article-title">Showing article detail</h1>
 
+<% if logged_in? %>
+    <%= link_to 'Logout', logout_path, class: "btn submit-btn", method: :delete %>
+<% else %>
+    <%= link_to 'Log in', login_path, class:"btn submit-btn" %>
+    <%= link_to "Sign up", signup_path, class:"btn submit-btn" %>
+<% end %>
+
 <div class="article-detail">
     by <strong><%= @article.user.username if @article.user %></strong>
     <p><strong>Title: </strong><%= @article.title %></p>
@@ -8,6 +15,6 @@
 
 <div class="article-actions">
     <%= link_to 'Edit', edit_article_path(@article), class: 'btn edit-btn' %> |
-    <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn delete-btn' %> |
+    <%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn delete-btn' %> |
     <%= link_to 'Return to articles listing', articles_path, class: 'btn return-btn' %>
 </div>
