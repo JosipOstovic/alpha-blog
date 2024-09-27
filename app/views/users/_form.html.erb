@@ -18,6 +18,7 @@
 
     <div class="form-group">
         <%= f.submit(@user.new_record? ? 'Sign up' : "Update account", class: 'btn submit-btn') %>
+        <%= link_to "Delete profile", user_path(current_user), class: 'btn delete-btn', data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete your account?" } %>
     </div>
 <% end %>
 
