@@ -1,5 +1,5 @@
 <% if logged_in? %>
-    <%= link_to 'Logout', logout_path, class: "btn submit-btn", method: :delete %>
+    <%= link_to 'Logout', logout_path, class: "btn delete-btn", method: :delete %>
 <% else %>
     <%= link_to 'Log in', login_path, class:"btn submit-btn" %>
 <% end %>
